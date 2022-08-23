@@ -14,7 +14,15 @@ public class Chapter10 {
 
         // 以下記述
         
+        long i = list.stream()
+        .filter(falseList -> falseList.isDone() ==  false)
+        .count();
+        System.out.println("未完了のタスクの個数は" + i);
+        
         System.out.println("【未完了のタスクを昇順に並び替えて一覧表示】");
+        
+
+        
         list.stream()
         .filter(falseList -> falseList.isDone() ==  false)
         .sorted((falseList1,falseList2) -> falseList1.getDate().compareTo(falseList2.getDate()))
